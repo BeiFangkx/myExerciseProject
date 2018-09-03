@@ -1,6 +1,6 @@
 <?php
 // +----------------------------------------------------------------------
-// | fileName:测试用户
+// | fileName:用户
 // +----------------------------------------------------------------------
 // | time:2018-08-31
 // +----------------------------------------------------------------------
@@ -13,11 +13,20 @@ class UserController extends Controller
 {
 
 	/**
-	 * 测试方法
+	 * 登录页面
 	 */
-	public function info()
+	public function login()
 	{
-		return $this->thisBaseFunc();
+		return view('login');
 	}
 
+	/**
+	 * 登录
+	 */
+	public function register()
+	{	
+
+		return 1;
+		test(1);
+	}
 }

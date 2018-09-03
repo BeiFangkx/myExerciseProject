@@ -1,27 +1,31 @@
 <?php
-
 // +----------------------------------------------------------------------
-// | fileName:公共方法
+// | fileName:测试类
 // +----------------------------------------------------------------------
-// | time:2018-06-01
+// | time:2018-08-31
 // +----------------------------------------------------------------------
 // | Author: kuangxi(774921903@qq.com)
 // +----------------------------------------------------------------------
 
+namespace App\Http\Controllers;
+
+class TestController extends Controller
+{
 
 	/**
-	 * 测试打印
-	 * 
-	 * @param  [mixed] $data [打印的数组或者字符串]
-	 * 
-	 * @return [void]
+	 * 测试方法
 	 */
-
-	function test($data)
+	public function info()
 	{
-		//判断是否数组
-		var_dump($data);
-
-		//中止
-		die();
+		return $this->thisBaseFunc();
 	}
+
+	/**
+	 * 打印php信息
+	 */
+	public function echoPhpInfo()
+	{
+		echo phpinfo();
+	}
+
+}
