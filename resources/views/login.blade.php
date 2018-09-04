@@ -10,7 +10,8 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            <form method="POST" action="{{ route('loginin') }}">
+            <form method="POST" action="{{ route('login') }}">
+                {{csrf_field()}}
                 用户名:<input type = "" name = "username" />
                 密码:  <input type = "" name = "password" />
                 <input type = "submit" value="登录" />

@@ -15,5 +15,5 @@
     return view('welcome');
 });*/
 
-Route::get('login', 'UserController@login');
-Route::get('loginIn', 'UserController@register');
+Route::get('user/login', 'UserController@login')->name('login');
+Route::post('login', 'UserController@register')->name('login');

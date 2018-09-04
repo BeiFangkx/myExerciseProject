@@ -25,3 +25,15 @@
 		//中止
 		die();
 	}
+
+
+	/**
+	 * 统一返回数组
+	 * 
+	 */
+	function returnJson($data = '', $code = '200', $msg = '请求成功')
+	{
+
+		return ['data'=>$data,'code'=>$code,'msg'=>$msg];
+
+	}
