@@ -16,7 +16,6 @@
 	 * 
 	 * @return [void]
 	 */
-
 	function test($data)
 	{
 		//判断是否数组
@@ -29,7 +28,6 @@
 
 	/**
 	 * 统一返回数组
-	 * 
 	 */
 	function returnJson($data = '', $code = '200', $msg = '请求成功')
 	{

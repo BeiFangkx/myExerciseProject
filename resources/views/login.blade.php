@@ -12,8 +12,8 @@
         <div class="flex-center position-ref full-height">
             <form method="POST" action="{{ route('login') }}">
                 {{csrf_field()}}
-                用户名:<input type = "" name = "username" />
-                密码:  <input type = "" name = "password" />
+                用户名:<input type = "text" name = "userName" />
+                密码:  <input type = "text" name = "userPsw" />
                 <input type = "submit" value="登录" />
             </form>
         </div>

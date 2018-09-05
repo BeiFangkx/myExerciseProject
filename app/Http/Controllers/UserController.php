@@ -9,7 +9,7 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+use App\Logics\UserLogic;
 
 class UserController extends Controller
 {
@@ -25,29 +25,26 @@ class UserController extends Controller
 	/**
 	 * 登录
 	 */
-	public function register()
+	public function signIn()
 	{	
 		//获取参数
 		$data = request()->post();
 
-		$credentials['username'] = $data['username'];
+		$credentials['userName'] = $data['userName'];
 
-		
+		//用户登录
+		$UserLogic = new UserLogic;
+		$ret = $UserLogic->store($data['userName'],$data['userPsw']);
 
-        if (Auth::attempt($credentials, request()->has('username'))) {
-            if(Auth::user()->activated) {
-               session()->flash('success', '欢迎回来！');
-               return redirect()->intended(route('users.show', [Auth::user()]));
-            } else {
-               Auth::logout();
-               session()->flash('warning', '你的账号未激活，请检查邮箱中的注册邮件进行激活。');
-               //return redirect('/');
-           }
-        } else {
-           session()->flash('danger', '很抱歉，您的邮箱和密码不匹配');
-           return redirect()->back();
-        }
-
+		return $ret;
 	}
+
+	/**
+	 *注册
+	 */
+	public function signUp()
+	{	
+	}
+
 
 }
