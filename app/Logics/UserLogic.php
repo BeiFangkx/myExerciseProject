@@ -22,14 +22,18 @@ class UserLogic  extends Base
 	public function store($userName,$userPsw)
 	{
 		$where = [
-			['ID','neq','2']
+			['userName','=',$userName]
 		];
-DB::enableQueryLog();
-		$ret = UserModel::where($where)->get();
 
-$sql = DB::getQueryLog();
+		$ret = UserModel::where($where)->find(1)->toArray();
 
-		return $sql;
+		if ($ret && $ret['userPsw'] == $userPsw) {
+			return '1';
+		}else{
+			return '查询不到';
+		}
+
+		
 	}
 
 }
