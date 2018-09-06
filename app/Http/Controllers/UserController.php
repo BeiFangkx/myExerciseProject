@@ -19,6 +19,7 @@ class UserController extends Controller
 	 */
 	public function login()
 	{
+		$a = 1/0;
 		return view('login');
 	}
 
@@ -31,7 +32,7 @@ class UserController extends Controller
 		$data = request()->post();
 
 		$credentials['userName'] = $data['userName'];
-
+return 1;
 		//用户登录
 		$UserLogic = new UserLogic;
 		$ret = $UserLogic->store($data['userName'],$data['userPsw']);
