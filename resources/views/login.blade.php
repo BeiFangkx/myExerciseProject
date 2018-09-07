@@ -9,7 +9,7 @@
 
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="">
             <form method="POST" action="{{ route('login') }}">
                 {{csrf_field()}}
                 用户名:<input type = "text" name = "userName" />

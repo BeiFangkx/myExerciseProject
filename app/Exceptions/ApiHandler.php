@@ -1,11 +1,19 @@
 <?php
+// +----------------------------------------------------------------------
+// | fileName:Api接口自定义异常返回
+// +----------------------------------------------------------------------
+// | time:2018-09-07
+// +----------------------------------------------------------------------
+// | Author: kuangxi(774921903@qq.com)
+// +----------------------------------------------------------------------
+
 
 namespace App\Exceptions;
 
 use Exception;
-// use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
-class ApiHandler
+class ApiHandler extends ExceptionHandler
 {
     /**
      * A list of the exception types that are not reported.
@@ -49,30 +57,22 @@ class ApiHandler
      */
     public function render($request, Exception $exception)
     {
-
-        if (config('app.debug')) {
-            return parent::render($request, $exception);
-        }
-
-        $return = [
-            'data'             => '1111111',
-            'code'             => $exception->getMessage()
-        ];
-        return $return;
-
-        return $this->handler1($exception);
+        return $this->handler($exception);
     }
 
-
-    public function handler1(Exception $exception)
+    /**
+     * 自定义返回异常方法
+     */
+    public function handler(Exception $exception)
     {
-        //可以处理成需要的格式
-        
         $return = [
-            'data'             => '1111111',
-            'code'             => $exception->getMessage()
+            'data' => '',
+            'code' => '400',
+            'msg'  => '错误为:'.$exception->getMessage().',文件地址:'.$exception->getFile().',行数:'.$exception->getLine()
         ];
-        return $return;
+
+        //这里要返回实例,所以加了response,踩了一个坑
+        return response($return);
     }
 
 

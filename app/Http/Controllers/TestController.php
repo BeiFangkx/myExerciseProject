@@ -17,6 +17,8 @@ class TestController extends Controller
 	 */
 	public function info()
 	{
+		return 1/0;
+
 		return $this->thisBaseFunc();
 	}
 

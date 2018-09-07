@@ -18,5 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });*/
 
 
-Route::get('Test/info','TestController@info');
+Route::get('info','TestController@info');
 Route::get('test/phpInfo','TestController@echoPhpInfo');

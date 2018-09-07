@@ -19,7 +19,6 @@ class UserController extends Controller
 	 */
 	public function login()
 	{
-		$a = 1/0;
 		return view('login');
 	}
 
@@ -45,6 +44,11 @@ return 1;
 	 */
 	public function signUp()
 	{	
+	}
+
+	public function Index()
+	{
+		return view('Index');
 	}
 
 
