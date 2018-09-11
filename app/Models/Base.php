@@ -14,5 +14,12 @@ use Illuminate\Database\Eloquent\Model;
 class Base extends Model
 {
 
+	/**
+	 * web 分页
+	 */
+	public function findPaginates($where = [], $field = [], $order = [], $paginate = '15')
+	{
+		return $this->simplePaginate($paginate);
+	}
 
 }

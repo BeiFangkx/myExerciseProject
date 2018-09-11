@@ -1,13 +1,26 @@
 <?php
 // +----------------------------------------------------------------------
-// | fileName:web路由
+// | fileName:用户数据层
 // +----------------------------------------------------------------------
-// | time:2018-09-10
+// | time:2018-09-05
 // +----------------------------------------------------------------------
 // | Author: kuangxi(774921903@qq.com)
 // +----------------------------------------------------------------------
 
-Route::redirect('/', '/index')->name('root');
-Route::get('index', 'HomeController@index')->name('home.index');
+namespace App\Models;
 
-Route::get('/{name}', 'HomeController@getMenus')->name('layouts.show');
+use App\Models\Base;
+
+class ArticleModel  extends Base
+{
+	//设置表名称
+	protected $table     = 'article'; 
+
+	public function getArtcles()
+	{
+		$ret = $this->get();
+
+		return $ret;
+	}
+
+}

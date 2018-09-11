@@ -7,7 +7,6 @@
 // | Author: kuangxi(774921903@qq.com)
 // +----------------------------------------------------------------------
 
-
 namespace App\Exceptions;
 
 use Exception;

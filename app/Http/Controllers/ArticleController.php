@@ -1,13 +1,26 @@
 <?php
 // +----------------------------------------------------------------------
-// | fileName:web路由
+// | fileName:文章
 // +----------------------------------------------------------------------
 // | time:2018-09-10
 // +----------------------------------------------------------------------
 // | Author: kuangxi(774921903@qq.com)
 // +----------------------------------------------------------------------
 
-Route::redirect('/', '/index')->name('root');
-Route::get('index', 'HomeController@index')->name('home.index');
+namespace App\Http\Controllers;
 
-Route::get('/{name}', 'HomeController@getMenus')->name('layouts.show');
+class ArticleController extends Controller
+{
+
+	/**
+	 * 文章列表
+	 */
+	public function getArtcles()
+	{
+		$artcles = '1';
+
+		return view('artcle',['article'=>$artcles]);
+	}
+
+
+}
