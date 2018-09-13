@@ -10,4 +10,5 @@
 Route::redirect('/', '/index')->name('root');
 Route::get('index', 'HomeController@index')->name('home.index');
 
-Route::get('/{name}', 'HomeController@getMenus')->name('layouts.show');
+Route::get('article/info/{id}', 'ArticleController@getArticle')->name('article.info');
+Route::get('article/list', 'ArticleController@getArticles')->name('article.list');

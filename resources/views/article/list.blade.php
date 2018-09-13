@@ -3,7 +3,13 @@
 @section('content') 
 
 <article>
+    <h1 class="t_nav">
+        <span>网站首页</span>
+        <a href="/" class="n1">网站首页</a>
+        <a href="/" class="n2">文章</a>
+    </h1>
     <div class="blogs">
+        <div class="mt20"></div>
 
         @foreach ($artcles as $artcle)
         <li> 
@@ -29,10 +35,10 @@
         </li>
         @endforeach
 
+        {{ $artcles->links() }}
     </div>
-    
-    @include('layouts.sidebar')
 
+    @include('layouts.sidebar')
 </article>
 
 @endsection

@@ -9,6 +9,8 @@
     <link href="{{ URL::asset('css/base.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/index.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/m.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
     <!--[if lt IE 9]>
     <script src="js/modernizr.js"></script>

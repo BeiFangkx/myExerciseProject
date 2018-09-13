@@ -1,5 +1,6 @@
 
 <div class="sidebar">
+    
     <div class="about">
         <div class="avatar"> 
             <img src="{{ $user['headImg'] }}" alt=""> 
@@ -8,6 +9,7 @@
         <p class="abposition">{{ $user['userName'] }}</p>
         <div class="abtext">{{ $user['userDesc'] }}</div>
     </div>
+
     <div class="search">
         <form action="" method="post" name="searchform" id="searchform">
             <input name="keyboard" id="keyboard" class="input_text" value="输入..." 

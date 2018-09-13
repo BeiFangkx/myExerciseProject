@@ -10,7 +10,7 @@
     <nav class="topnav" id="topnav">
         <ul>
             @foreach ($menus as $menu)
-            <li><a href="{{ $menu->menuName }}">{{ $menu->menuName }}</a></li>
+            <li><a href="{{ $menu->menuUrl }}">{{ $menu->menuName }}</a></li>
             @endforeach
         </ul>
     </nav>
